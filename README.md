@@ -2,7 +2,7 @@
 Allows users to ask what tickets are available for purchase.
 
 ## About
-Users may ask what tickets are available and the virtual ticket agent will list them out.
+Users may ask what tickets are available and the virtual ticket agent will list them with their corresponding start point, destination, ETA, and price.
 
 ## Examples
 * "List tickets"
