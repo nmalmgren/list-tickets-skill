@@ -18,11 +18,11 @@ class ListTickets(MycroftSkill):
         cur.execute("SELECT * FROM PassData")
         rows = cur.fetchall()
         i=1
-        self.speak_dialog('tickets.list.dialog')
+        self.speak('Here are the available tickets.')
         for row in rows:
             cur.execute("SELECT * FROM TransitLine WHERE LineID = ?", (row[3],))
             idrow = cur.fetchone()
-            self.speak('Pass {} starts at {} ends at {} has an E.T.A of {} and costs {}'.format(i, row[4], row[5], idrow[3], row[6]))
+            self.speak('Ticket {} starts at {}, ends at {}, has an E.T.A of {}, and costs {}.'.format(i, row[4], row[5], idrow[3], row[6]))
             i += 1
         conn.close()
 
