@@ -22,7 +22,7 @@ class ListTickets(MycroftSkill):
         for row in rows:
             cur.execute("SELECT * FROM TransitLine WHERE LineID = ?", (row[3],))
             idrow = cur.fetchone()
-            self.speak('Ticket {} starts at {}, ends at {}, has an E.T.A of {}, and costs ${}.'.format(i, row[4], row[5], idrow[3], row[6]))
+            self.speak('Ticket {} starts at {}, ends at {}, has an E.T.A of {}, and costs {}.'.format(i, row[4], row[5], idrow[3], row[6]))
             i += 1
         conn.close()
 
